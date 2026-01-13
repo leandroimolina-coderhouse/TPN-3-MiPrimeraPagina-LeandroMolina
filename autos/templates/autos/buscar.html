@@ -1,18 +1,130 @@
 {% extends 'autos/base.html' %}
 
 {% block contenido %}
-<h2>Buscar Auto</h2>
+<style>
+    .search-container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 30px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
 
-<form method="get">
-    {{ form.as_p }}
-    <button type="submit">Buscar</button>
-</form>
+    .search-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #2c3e50;
+        font-weight: bold;
+    }
 
-<ul>
-    {% for auto in autos %}
-        <li>{{ auto.marca }} - {{ auto.modelo }} - {{ auto.anio }}</li>
-    {% empty %}
-        <li>No se encontraron autos</li>
-    {% endfor %}
-</ul>
+    .search-form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .search-form p {
+        margin: 0;
+    }
+
+    .search-form label {
+        font-weight: 600;
+        color: #34495e;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .search-form input,
+    .search-form select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+
+    .search-button {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .search-button button {
+        background: #e74c3c;
+        color: #fff;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .search-button button:hover {
+        background: #c0392b;
+    }
+
+    .results {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .car-card {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .car-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .car-card h3 {
+        margin-bottom: 10px;
+        color: #2c3e50;
+    }
+
+    .car-card p {
+        margin: 5px 0;
+        color: #555;
+    }
+
+    .no-results {
+        text-align: center;
+        color: #888;
+        font-size: 16px;
+        grid-column: 1 / -1;
+    }
+</style>
+
+<div class="search-container">
+    <h2>Buscar Auto</h2>
+
+    <form method="get" class="search-form">
+        {{ form.as_p }}
+
+        <div class="search-button">
+            <button type="submit">🔍 Buscar</button>
+        </div>
+    </form>
+
+    <div class="results">
+        {% for auto in autos %}
+            <div class="car-card">
+                <h3>{{ auto.marca }} {{ auto.modelo }}</h3>
+                <p><strong>Año:</strong> {{ auto.anio }}</p>
+            </div>
+        {% empty %}
+            <div class="no-results">
+                🚗 No se encontraron autos
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
