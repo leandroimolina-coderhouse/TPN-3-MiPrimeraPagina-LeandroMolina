@@ -37,3 +37,4 @@ def buscar_auto(request):
 
     return render(request, "autos/buscar.html", {"form": form, "autos": autos})
 
+

@@ -1,0 +1,31 @@
+{% extends 'autos/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Detalle del Modelo</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <p><strong>Nombre:</strong> {{ modelo.nombre }}</p>
+            <p><strong>Apellido:</strong> {{ modelo.apellido }}</p>
+            <p><strong>Especialidad:</strong> {{ modelo.get_segmentos_display }}</p>
+            <p><strong>Fecha de inicio:</strong> {{ modelo.fecha_de_inicio }}</p>
+            <p><strong>Código:</strong> {{ modelo.code }}</p>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a href="{% url 'modelo_list' %}" class="btn btn-secondary">
+            Volver al listado
+        </a>
+
+        <a href="{% url 'modelo_update' modelo.code %}" class="btn btn-warning">
+            Editar
+        </a>
+
+        <a href="{% url 'modelo_delete' modelo.pk %}" class="btn btn-danger">
+            Eliminar
+        </a>
+    </div>
+</div>
+{% endblock %}
