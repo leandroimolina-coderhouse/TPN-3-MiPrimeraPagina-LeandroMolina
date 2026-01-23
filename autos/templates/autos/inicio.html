@@ -1,5 +1,49 @@
 {% extends 'autos/base.html' %}
 
 {% block contenido %}
-<h2>Bienvenido al sistema del Concesionario</h2>
+
+<style>
+    .about-section {
+        background-color: #f8fafc;
+        padding: 60px 20px;
+        border-radius: 18px;
+    }
+
+    .about-text {
+        font-size: 1.05rem; /* letra mediana */
+        color: #475569;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    .about-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #0f172a;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+</style>
+
+<section class="container my-5">
+    <div class="about-section shadow-sm">
+        <h2 class="about-title">Acerca del Negocio</h2>
+
+        <p class="about-text">
+            Con más de 30 años en el mercado, brindamos soluciones integrales de
+            movilidad ofreciendo vehículos nuevos y usados de alta calidad,
+            con atención personalizada, transparencia y compromiso,
+            acompañando a cada cliente en la elección del vehículo que mejor
+            se adapte a sus necesidades y estilo de vida.
+        </p>
+
+        <p class="about-text mt-3">
+            Nuestra visión es ser una concesionaria automotriz líder en el mercado,
+            reconocida por la confianza, la excelencia en el servicio y la innovación
+            constante, consolidándonos como la primera opción de compra para quienes
+            buscan seguridad, calidad y respaldo en su experiencia automotriz.
+        </p>
+    </div>
+</section>
+
 {% endblock %}

@@ -1,0 +1,35 @@
+{% extends "autos/base.html" %}
+
+{% block titulo %}
+<title>Acerca de mí</title>
+{% endblock %}
+
+{% block bienvenida %}
+<section class="hero text-center">
+    <div class="container">
+        <h1>Acerca de mí</h1>
+        <p class="mt-3">
+            Conocé quién está detrás de este concesionario
+        </p>
+    </div>
+</section>
+{% endblock %}
+
+{% block contenido %}
+<section class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h3>👋 Hola, soy el creador del sitio</h3>
+            <p class="mt-3">
+                Este proyecto fue desarrollado como parte de una aplicación web
+                utilizando Django. El objetivo es simular un concesionario
+                automotriz moderno, con buenas prácticas y diseño responsivo.
+            </p>
+            <p>
+                Apasionado por el desarrollo web, Python y la creación de
+                soluciones funcionales.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}

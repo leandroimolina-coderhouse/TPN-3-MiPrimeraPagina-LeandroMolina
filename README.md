@@ -3,10 +3,10 @@
 ## Funcionalidades
 
 1. Página de inicio
-2. Alta de Marcas
-3. Alta de Autos
-4. Alta de Clientes
-5. Búsqueda de Autos por modelo
+2. Conocer Servicios ofrecidos
+3. Conocer Marcas Disponibles
+4. Búsqueda de Autos por modelo
+5- Story/Brief acerca del fundador
 
 ## Orden recomendado de prueba
 
@@ -18,7 +18,56 @@
 
 ## Estructura
 
-- Models: Marca, Auto, Cliente
-- Formularios: uno por cada modelo
-- Búsqueda: Auto por modelo
-- Templates con herencia usando base.html
+concesionario/
+│
+├── manage.py
+│
+├── concesionario/            # Proyecto principal
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+│
+├── apps/
+│   ├── core/                 # Home / inicio
+│   │   ├── migrations/
+│   │   ├── templates/
+│   │   │   └── core/
+│   │   │       └── inicio.html
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   └── models.py
+│   │
+│   ├── autos/                # Marcas y modelos
+│   │   ├── migrations/
+│   │   ├── templates/
+│   │   │   └── autos/
+│   │   │       ├── marca_form.html
+│   │   │       ├── modelo_form.html
+│   │   │       ├── modelo_list.html
+│   │   │       └── buscar_auto.html
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   └── models.py
+│   │
+│   └── usuarios/             # Login, registro, perfil
+│       ├── migrations/
+│       ├── templates/
+│       │   └── usuarios/
+│       │       ├── login.html
+│       │       ├── register.html
+│       │       └── perfil_detail.html
+│       ├── views.py
+│       ├── urls.py
+│       └── models.py
+│
+├── templates/                # Templates globales
+│   └── base.html            
+│
+├── static/
+│   ├── css/
+│   ├── js/
+│   └── img/
+│
+└── media/

@@ -5,6 +5,9 @@ from .models import Auto
 def inicio(request):
     return render(request, "autos/inicio.html")
 
+def acerca_de(request):
+    return render(request, "autos/acerca_de.html")
+
 
 def crear_marca(request):
     form = MarcaForm(request.POST or None)
