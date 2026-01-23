@@ -96,8 +96,7 @@
 
                 {% if user.is_authenticated %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'acerca_de' %}">Acerca de mí</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'crear_marca' %}">Marcas</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'modelo_create' %}">Modelos</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'ver_marca' %}">Marcas</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'perfil_detail' %}">Perfil</a></li>
                 <li class="nav-item"><a class="nav-link text-danger" href="{% url 'logout' %}">Salir</a></li>
                 {% else %}

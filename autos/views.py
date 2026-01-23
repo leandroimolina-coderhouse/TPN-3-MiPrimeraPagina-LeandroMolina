@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import MarcaForm, AutoForm, ClienteForm, BuscarAutoForm
-from .models import Auto
+from .models import Auto, Marca
 
 def inicio(request):
     return render(request, "autos/inicio.html")
@@ -14,6 +14,10 @@ def crear_marca(request):
     if form.is_valid():
         form.save()
     return render(request, "autos/formulario.html", {"form": form, "titulo": "Alta de Marca"})
+
+def ver_marca(request):
+    marcas = Marca.objects.first()
+    return render(request, 'autos/ver_marca.html', {'marcas': marcas})
 
 
 def crear_auto(request):
