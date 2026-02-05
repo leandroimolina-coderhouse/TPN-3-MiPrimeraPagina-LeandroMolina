@@ -26,3 +26,4 @@ class Cliente(models.Model):
     def __str__(self):
         return self.nombre
 
+
